@@ -59,6 +59,10 @@
 .logoWrapper {
     height: 2.4rem;
     width: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .footerTitle {
