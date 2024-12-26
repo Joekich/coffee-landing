@@ -87,26 +87,25 @@ const Content = () => {
           <div className={styles.block1}>
             <div className={styles.leftPart}>
               <h2 className={styles.h2}>Discover the best coffee</h2>
-              <span className={styles.text}>Bean Scene is a coffee shop that provides you with quality coffee<br/>
+              <p className={styles.text}>Bean Scene is a coffee shop that provides you with quality coffee<br/>
                that helps boost your productivity and helps build your mood.<br/> 
                Having a cup of coffee is good, but having a cup of real coffee is<br/>
                 greater. There is no doubt that you will enjoy this coffee more<br/>
-                 than others you have ever tasted.</span>
+                 than others you have ever tasted.</p>
                  <a className={styles.learnMoreButton}>Learn More</a>
             </div>
             <div className={styles.rightPart}>
-              <img src={CoffeeBeansCup}/>
+              <img draggable='false' src={CoffeeBeansCup} className={styles.disabledSelect}/>
             </div>
           </div>
-          <img className={styles.coffeeBlastLeft} src={CoffeeBlastLeft}/>
+          <img draggable='false' className={styles.coffeeBlastLeft} src={CoffeeBlastLeft}/>
           <div className={styles.block2}>
             <h2 className={styles.h2}>Enjoy a new blend of coffee style</h2>
-            <span className={styles.text}>Explore all flavours of coffee with us. There is always a new cup worth experiencing</span>
+            <p className={styles.text}>Explore all flavours of coffee with us. There is always a new cup worth experiencing</p>
             <section className={styles.coffeeCardBlock}>
                     {coffeeData.map((coffee) => (
                       <article key={coffee.id} className={styles.coffeeCard}>
-                          <div className={styles.coffeeCardBackground}></div>
-                          <img src={coffee.image} className={styles.coffeeCardImgBlock} alt={coffee.name} />
+                          <img draggable='false' src={coffee.image} className={styles.coffeeCardImgBlock} alt={coffee.name} />
                           <div className={styles.coffeeCardInfo}>
                               <h3 className={styles.coffeeName}>{coffee.name}</h3>
                               <span className={styles.coffeeProportions}>{coffee.proportions}</span>
@@ -116,78 +115,78 @@ const Content = () => {
                       </article>
                   ))}
               </section>
-                <img className={styles.coffeeBlastRight} src={CoffeeBlastRight}/>
+                <img draggable='false' className={styles.coffeeBlastRight} src={CoffeeBlastRight}/>
           </div>
           <div className={styles.block3}>
             <div className={styles.h2group}>
               <h2 className={styles.h2}>Why are we different?</h2>
-              <span className={styles.text}>We don’t just make your coffee, we make your day!</span>
+              <p className={styles.text}>We don’t just make your coffee, we make your day!</p>
             </div>
             <section className={styles.benefitsBlock}>
               {benefitsBlockData.map((benefit) => (
                   <article key={benefit.id} className={styles.benefitCard}>
-                    {benefit.icon}
+                      {benefit.icon}
                       <h3 className={styles.benefitTitle}>{benefit.title}</h3>
                       <span className={styles.benefitText}>{benefit.text}</span>
                   </article>
                 ))}
             </section>
             <div className={styles.lowerTextArea}>
-                <span className={styles.text}>Great ideas start with great coffee, Lets help you achieve that</span>
-                <h4 className={styles.h4}>Get started today.</h4>
+                <p className={styles.text}>Great ideas start with great coffee, Lets help you achieve that</p>
+                <strong className={styles.h4}>Get started today.</strong>
                 <a className={styles.joinUsButton}>Join Us</a>
             </div>
           </div>
           <div className={styles.block4}>
             <div className={styles.imageContainer}>
-              <img src={CoffeeCupBackground} />
+              <img draggable='false' src={CoffeeCupBackground} />
             </div>
             <div className={styles.block4TextArea}>
                 <h2 className={styles.block4Title}>Get a chance to have an<br/>
                 Amazing morning</h2>
-                <span className={styles.block4Text}>We are giving you are one time opportunity to<br/>
-                experience a better life with coffee.</span>
+                <p className={styles.block4Text}>We are giving you are one time opportunity to<br/>
+                experience a better life with coffee.</p>
                 <a className={styles.block4orderButton}>Order Now</a>
             </div>
-            <img src={CoffeeBeansBackground} className={styles.coffeeBeansBackground}/>
-            <img src={CoffeeCupBlock4} className={styles.coffeeCupBlock4}/>
+            <img draggable='false' src={CoffeeBeansBackground} className={styles.coffeeBeansBackground}/>
+            <img draggable='false' src={CoffeeCupBlock4} className={styles.coffeeCupBlock4}/>
           </div>
           <div className={styles.feedbackBlock}>
                 <div className={styles.feedbackTitle}>
                   <h2 className={styles.h2}>Our coffee perfection feedback</h2>
-                  <span className={styles.text}>Our customers has amazing things to say about us</span>
+                  <p className={styles.text}>Our customers has amazing things to say about us</p>
                 </div>
                 <div className={styles.feedbackCard}>
                   <div className={styles.quotationMark}>
                     <span className={styles.quot}>“</span>
                   </div>
-                  <span className={styles.feedbackText}>
+                  <p className={styles.feedbackText}>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has<br/>
                      been the industry's standard dummy text ever since the 1500s, when an unknown printer took a<br/> 
                      galley of type and scrambled it to make a type specimen book. It has survived not only five<br/> 
                      centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was<br/> 
-                     popularised in the 1960s with the release of Letraset.....</span>
-                    <h2 className={styles.customerName}>Jonny Thomas</h2>
+                     popularised in the 1960s with the release of Letraset.....</p>
+                    <span className={styles.customerName}>Jonny Thomas</span>
                     <span className={styles.text}>Project Manager</span>
-                    <img src={CustomerPhoto} className={styles.customerPhoto}/>
+                    <img draggable='false' src={CustomerPhoto} className={styles.customerPhoto}/>
                     <button className={styles.swipeButtonLeft}>
                       <SwipeButtonArrow/>
                     </button>
                     <button className={styles.swipeButtonRight}>
                       <SwipeButtonArrow/>
                     </button>
-                    <img src={CoffeeBlastLeftFeedback} className={styles.coffeeBlastLeftFeedback}/>
-                    <img src={CoffeeBlastRightFeedback} className={styles.coffeeBlastRightFeedback}/>
+                    <img draggable='false' src={CoffeeBlastLeftFeedback} className={styles.coffeeBlastLeftFeedback}/>
+                    <img draggable='false' src={CoffeeBlastRightFeedback} className={styles.coffeeBlastRightFeedback}/>
                 </div>
           </div>
           <div className={styles.subscribeBlock}>
             <div className={styles.imageContainer}>
-              <img src={SubscribeBackground} />
+              <img draggable='false' src={SubscribeBackground} />
             </div>
             <div className={styles.subscribe}>
               <div className={styles.subscribeTextArea}>
                 <h2 className={styles.subscribeTitle}>Subscribe to get the Latest News</h2>
-                <span className={styles.subscribeText}>Don’t miss out on our latest news, updates, tips and special offers</span>
+                <p className={styles.subscribeText}>Don’t miss out on our latest news, updates, tips and special offers</p>
               </div>
               <div className={styles.subscribeContainer}>
                 <input type="email" placeholder="Enter your mail" className={styles.subscribeInput} />
