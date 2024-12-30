@@ -51,7 +51,8 @@ const Footer = () => {
             });
           },
           {
-            rootMargin: "0px",
+            threshold: 1,
+            rootMargin: "20px",
           }
         );
 
@@ -64,7 +65,8 @@ const Footer = () => {
               });
             },
             {
-              rootMargin: "0px",
+              threshold: 1,
+              rootMargin: "20px",
             }
           );
 
