@@ -10,6 +10,7 @@ import FacebookLogo from '../../assets/svg/facebook-logo.jsx';
 import TwitterLogo from '../../assets/svg/twitter-logo.jsx';
 import YoutubeLogo from '../../assets/svg/youtube-logo.jsx';
 import InstagramLogo from '../../assets/svg/instagram-logo.jsx';
+import { useEffect, useRef } from 'react';
 
 const logos = [
     {
@@ -34,12 +35,57 @@ const logos = [
     }
 ];
 
+
+
 const Footer = () => {
+    const footerCupLeftRef = useRef(null);
+    const footerCupRightRef = useRef(null);
+
+    useEffect(() => {
+        const footerCupLeftObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add(styles.visible);
+              }
+            });
+          },
+          {
+            rootMargin: "0px",
+          }
+        );
+
+        const footerCupRightObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add(styles.visible);
+                }
+              });
+            },
+            {
+              rootMargin: "0px",
+            }
+          );
+
+          if (footerCupLeftRef.current) {
+            footerCupLeftObserver.observe(footerCupLeftRef.current);
+          }
+
+          if (footerCupRightRef.current) {
+            footerCupRightObserver.observe(footerCupRightRef.current);
+          }
+
+          return () => {
+            footerCupLeftObserver.disconnect();
+            footerCupRightObserver.disconnect();
+          };
+        }, []);
     return (
         <section className={styles.footer}>
             <img draggable='false' src={FooterBackground} className={styles.footerBackground}/>
-            <img draggable='false' src={FooterCupLeft} className={styles.footerCupLeft}/>
-            <img draggable='false' src={FooterCupRight} className={styles.footerCupRight}/>
+            <img ref={footerCupLeftRef} draggable='false' src={FooterCupLeft} className={`${styles.footerCupLeft} ${styles.hidden}`}/>
+            <img ref={footerCupRightRef} draggable='false' src={FooterCupRight} className={`${styles.footerCupRight} ${styles.hidden}`}/>
             <div className={styles.beanScene}>
                 <a href='/' className={styles.beanSceneTitle}>Bean Scene</a>
                 <p className={styles.beanSceneText}>Lorem Ipsum is simply dummy text of the printing and<br/>

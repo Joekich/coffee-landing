@@ -3,17 +3,49 @@
     width: 136.8rem;
     margin: 0 auto;
     overflow: hidden;
+    background: white;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .block1 {
-    position: relative;
-    z-index: 2;
-    margin: 8.2rem auto 0rem;
-    height: 48.4rem;
-    width: 118rem;
-    display: flex;
-    flex-direction: row;
-    gap: 9.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 9.5rem;
+  margin: 8.2rem 0rem 9.4rem 0rem;
+  transition: all 1s ease-out;
+
+  &.hidden .leftPart {
+    transform: translateX(-30rem);
+  }
+
+  &.hidden .rightPart {
+    transform: translateX(30rem);
+  }
+
+  &.visible {
+    opacity: 1;
+
+    .leftPart {
+      transform: translateX(0);
+      transition: all 0.7s ease-out;
+      z-index: 2;
+    }
+
+    .rightPart {
+      transform: translateX(0);
+      transition: all 0.7s ease-out;
+    }
+  }
+}
+
+.leftPart,
+.rightPart {
+  transition: transform 0.7s ease, opacity 0.7s ease;
 }
 
 .h2 {
@@ -65,7 +97,16 @@
     z-index: 1;
     top: 42.1rem;
     user-select: none;
-}
+    opacity: 0;
+    transform: translateX(-30rem);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.4s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
 .block2 {
     position: relative;
@@ -92,6 +133,18 @@
     flex-direction: column;
     width: 28rem;
 }
+
+.coffeeCard {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 0.2s;
+  }
+  
+  .coffeeCard.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
 .coffeeCardBackground {
     width: 28rem;
@@ -179,6 +232,14 @@
     top: 50.8rem;
     right: -9.5rem;
     user-select: none;
+    transform: translateX(30rem);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.4s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
 }
 
 .h2group {
@@ -204,8 +265,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.5s;
     padding-bottom: 3.6rem;
+    transition: 0.5s;
 }
 
 .benefitCard:hover {
@@ -213,6 +274,19 @@
     background-color: #FFEED8;
     cursor: pointer;
 }
+
+.benefitCard {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 0.2s;
+  }
+
+  .benefitCard.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
 
 .icon {
     margin-top: 3.6rem;
@@ -314,6 +388,17 @@
     z-index: 2;
 }
 
+.block4TextArea {
+    transform: translateX(-50%);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.4s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
 .block4Title {
     font-family: "Playfair Display";
     font-size: 5.4rem;
@@ -361,6 +446,17 @@
     user-select: none;
 }
 
+.coffeeBeansBackground {
+    transform: translateX(50%);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.4s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
 .coffeeCupBlock4 {
     position: absolute;
     top: 5.4rem;
@@ -368,6 +464,17 @@
     z-index: 2;
     filter: drop-shadow(0px 10px 12px 0px rgba(0, 0, 0, .34)) ;
     user-select: none;
+}
+
+.coffeeCupBlock4 {
+    transform: translateX(50%);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.8s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
 }
 
 .feedbackBlock {
@@ -486,11 +593,33 @@
     user-select: none;
 }
 
+.coffeeBlastLeftFeedback {
+    transform: translateX(-50%);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.3s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
 .coffeeBlastRightFeedback {
     position: absolute;
     left: 73.1rem;
     bottom: 37rem;
     user-select: none;
+}
+
+.coffeeBlastRightFeedback {
+    transform: translateX(50%);
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    transition-delay: 0.3s;
+  
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
 }
 
 .subscribeBlock {
