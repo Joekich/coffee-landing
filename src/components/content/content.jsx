@@ -182,7 +182,8 @@ const Content = () => {
        });
      },
      {
-       rootMargin: "20px",
+      threshold: 0.4,
+       rootMargin: "20px",  
      }
    );
 
@@ -195,6 +196,7 @@ const Content = () => {
       });
     },
     {
+      threshold: 0.4,
       rootMargin: "20px",
     }
   );
@@ -208,6 +210,7 @@ const Content = () => {
       });
     },
     {
+      threshold: 0.2,
       rootMargin: "20px",
     }
   );
